@@ -1,0 +1,257 @@
+Coverage Report Summary Data by file
+File: E:/UVM/spi/rtl/spi_master.sv
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       12        12         0     100.0
+    Branches                     9         8         1      88.8
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+
+File: E:/UVM/spi/rtl/spi_slave.sv
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       12        12         0     100.0
+    Branches                    10         9         1      90.0
+    FEC Condition Terms          3         2         1      66.6
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+
+
+Coverage Report by file with details
+File: E:/UVM/spi/rtl/spi_master.sv
+Statement Coverage:
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       12        12         0     100.0
+
+================================Statement Details================================
+
+Statement Coverage for file E:/UVM/spi/rtl/spi_master.sv --
+
+    1                                              /*###################################################################*\
+    2                                              ##              Module Name: spi_master                              ##
+    3                                              ##              Project Name: spi_protocol                           ##
+    4                                              ##              Date:   9/12/2023                                    ##
+    5                                              ##              Author: Kholoud Ebrahim Darwseh                      ##
+    6                                              \*###################################################################*/
+    7                                              
+    8                                              module spi_master(mclk, rst, load, read, miso, start, data_in, data_out, mosi, sclk, cs);
+    9                                                  input mclk, rst, load, miso, start, read;
+    10                                                 input [7:0] data_in;
+    11                                                 output[7:0] data_out;
+    12                                                 output reg mosi, cs;
+    13                                                 output sclk;
+    14                                             
+    15                                                 integer count;
+    16                                                 reg [7:0] shift_reg;
+    17                                                 reg [7:0] data_out_reg;
+    18                                             
+    19            1                        186         assign data_out = read? data_out_reg:8'h00;
+    20                                                 assign sclk = mclk;
+    21                                             
+    22            1                        726         always @(posedge sclk,negedge rst)
+    23                                                 if(!rst) begin
+    24            1                          6             shift_reg    <= 0;
+    25            1                          6             cs           <= 0;
+    26            1                          6             mosi         <= 0;
+    27            1                          6             data_out_reg <= 0;
+    28                                                 end
+    29                                                 else begin
+    30                                                     if(start) begin 
+    31                                                         if(load) begin
+    32            1                         60                     shift_reg <= data_in;
+    33            1                         60                     count     <= 0;
+    34                                                         end
+    35                                                         else if(read) begin
+    36            1                        117                     data_out_reg<=shift_reg;
+    37                                                         end
+    38                                                         else if(count<=8)begin
+    39            1                        540                     shift_reg <= {miso,shift_reg[7:1]};
+    40            1                        540                     mosi      <= shift_reg[0];
+    41            1                        540                     count     <= count+1;
+    42                                                         end
+    43                                                     end
+    44                                                 end
+    45                                             endmodule :spi_master
+
+Branch Coverage:
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Branches                     9         8         1      88.8
+
+================================Branch Details================================
+
+Branch Coverage for file E:/UVM/spi/rtl/spi_master.sv --
+
+------------------------------------IF Branch------------------------------------
+    19                                     180     Count coming in to IF
+    19            1                        120         assign data_out = read? data_out_reg:8'h00;
+    19            2                         60         assign data_out = read? data_out_reg:8'h00;
+Branch totals: 2 hits of 2 branches = 100.0%
+
+------------------------------------IF Branch------------------------------------
+    23                                     726     Count coming in to IF
+    23            1                          6         if(!rst) begin
+    30            1                        717             if(start) begin 
+                                             3     All False Count
+Branch totals: 3 hits of 3 branches = 100.0%
+
+------------------------------------IF Branch------------------------------------
+    31                                     717     Count coming in to IF
+    31            1                         60                 if(load) begin
+    35            1                        117                 else if(read) begin
+    38            1                        540                 else if(count<=8)begin
+                                       ***0***     All False Count
+Branch totals: 3 hits of 4 branches = 75.0%
+
+
+Condition Coverage:
+    Enabled Coverage        Active   Covered    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    FEC Condition Terms          0         0         0     100.0
+Expression Coverage:
+    Enabled Coverage        Active   Covered    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    FEC Expression Terms         0         0         0     100.0
+FSM Coverage:
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+
+File: E:/UVM/spi/rtl/spi_slave.sv
+Statement Coverage:
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       12        12         0     100.0
+
+================================Statement Details================================
+
+Statement Coverage for file E:/UVM/spi/rtl/spi_slave.sv --
+
+    1                                              /*###################################################################*\
+    2                                              ##              Module Name: spi_slave                               ##
+    3                                              ##              Project Name: spi_protocol                           ##
+    4                                              ##              Date:   9/12/2023                                    ##
+    5                                              ##              Author: Kholoud Ebrahim Darwseh                      ##
+    6                                              \*###################################################################*/
+    7                                              
+    8                                              module spi_slave(sclk, rst, cs, mosi, miso, data_in, data_out, read, load);
+    9                                                  input sclk, cs, mosi, rst, read, load;
+    10                                                 input [7:0] data_in;
+    11                                                 output reg miso;
+    12                                                 output [7:0] data_out;
+    13                                             
+    14                                                 integer count;
+    15                                                 reg [7:0] shift_reg;
+    16                                                 reg miso_reg;
+    17                                                 reg [7:0] data_out_reg;
+    18                                                 
+    19            1                        185         assign data_out = read? data_out_reg:8'h00;
+    20                                                 
+    21            1                        719         always@(posedge sclk) begin
+    22                                                     if(load) begin
+    23            1                         60                 shift_reg <= data_in;
+    24            1                         60                 count     <= 0;
+    25                                                     end
+    26                                                     else if(read)
+    27            1                        116                 data_out_reg <= shift_reg;
+    28                                                 end
+    29                                                     
+    30            1                        671         always@(negedge sclk, negedge cs) begin
+    31                                                     if(!rst) begin
+    32            1                          9                 shift_reg    <= 0;
+    33            1                          9                 miso         <= 0;
+    34            1                          9                 data_out_reg <= 0;
+    35                                                     end
+    36                                                     else 
+    37                                                     if(!cs) begin
+    38                                                         if(!read && !load && count<=8) begin
+    39            1                        480                     shift_reg <= {mosi,shift_reg[7:1]};
+    40            1                        480                     miso      <= shift_reg[0];
+    41            1                        480                     count     <= count+1;
+    42                                                         end
+    43                                                     end
+    44                                                 end
+    45                                             endmodule :spi_slave
+
+Branch Coverage:
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Branches                    10         9         1      90.0
+
+================================Branch Details================================
+
+Branch Coverage for file E:/UVM/spi/rtl/spi_slave.sv --
+
+------------------------------------IF Branch------------------------------------
+    19                                     179     Count coming in to IF
+    19            1                        119         assign data_out = read? data_out_reg:8'h00;
+    19            2                         60         assign data_out = read? data_out_reg:8'h00;
+Branch totals: 2 hits of 2 branches = 100.0%
+
+------------------------------------IF Branch------------------------------------
+    22                                     719     Count coming in to IF
+    22            1                         60             if(load) begin
+    26            1                        116             else if(read)
+                                           543     All False Count
+Branch totals: 3 hits of 3 branches = 100.0%
+
+------------------------------------IF Branch------------------------------------
+    31                                     671     Count coming in to IF
+    31            1                          9             if(!rst) begin
+    37            1                        662             if(!cs) begin
+                                       ***0***     All False Count
+Branch totals: 2 hits of 3 branches = 66.6%
+
+------------------------------------IF Branch------------------------------------
+    38                                     662     Count coming in to IF
+    38            1                        480                 if(!read && !load && count<=8) begin
+                                           182     All False Count
+Branch totals: 2 hits of 2 branches = 100.0%
+
+
+Condition Coverage:
+    Enabled Coverage        Active   Covered    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    FEC Condition Terms          3         2         1      66.6
+
+================================Condition Details================================
+
+Condition Coverage for file E:/UVM/spi/rtl/spi_slave.sv --
+
+----------------Focused Condition View-------------------
+Line       38 Item    1             if(!read && !load && count<=8) begin
+Condition totals: 2 of 3 input terms covered = 66.6%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+          read         Y
+          load         Y
+  (count <= 8)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Matching input patterns       
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:        480  read_0                { 001 }                       
+  Row   2:        176  read_1                { 1-- }                       
+  Row   3:        480  load_0                { 001 }                       
+  Row   4:         60  load_1                { -1- }                       
+  Row   5:    ***0***  (count <= 8)_0        { 000 }                       
+  Row   6:        480  (count <= 8)_1        { 001 }                       
+
+NOTE:
+  * Order of matching input pattern values: {read,load,(count <= 8)}
+
+
+Expression Coverage:
+    Enabled Coverage        Active   Covered    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    FEC Expression Terms         0         0         0     100.0
+FSM Coverage:
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0

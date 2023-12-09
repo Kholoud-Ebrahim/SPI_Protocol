@@ -1,0 +1,385 @@
+# vsim +UVM_TESTNAME=spi_test_1 -assertdebug -coverage -fsmdebug -c -debugDB top_opt 
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.spi_pkg
+# Loading work.spi_top_sv_unit
+# Loading work.spi_top(fast)
+# Loading work.spi_interface(fast)
+# Loading work.spi(fast)
+# Loading work.spi_master(fast)
+# Loading work.spi_slave(fast)
+# Loading D:\questasim_10.0b\uvm-1.0p1\win32\uvm_dpi.dll
+# 1
+# ----------------------------------------------------------------
+# UVM-1.0p1 
+# (C) 2007-2011 Mentor Graphics Corporation
+# (C) 2007-2011 Cadence Design Systems, Inc.
+# (C) 2006-2011 Synopsys, Inc.
+# ----------------------------------------------------------------
+# UVM_INFO @ 0: reporter [RNTST] Running test spi_test_1...
+# UVM_INFO @ 0ns: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               spi_test_1              -     @462 
+#   spi_env                  spi_environment         -     @471 
+#     agnt                   spi_agent               -     @488 
+#       drv                  spi_driver              -     @643 
+#         rsp_port           uvm_analysis_port       -     @658 
+#         sqr_pull_port      uvm_seq_item_pull_port  -     @650 
+#       mon                  spi_monitor             -     @666 
+#         mon_port           uvm_analysis_port       -     @680 
+#       mon2agent_port       uvm_analysis_port       -     @525 
+#       sqr                  spi_sequencer           -     @534 
+#         rsp_export         uvm_analysis_export     -     @541 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @635 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     cov                    spi_coverage_collector  -     @502 
+#       analysis_imp         uvm_analysis_imp        -     @509 
+#       cov_imp              uvm_analysis_imp        -     @696 
+#     scb                    spi_scoreboard          -     @495 
+#       spi_imp              uvm_analysis_imp        -     @705 
+# --------------------------------------------------------------
+# 
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b111000  
+#   din_slave                integral                8     'b11001111
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b0       
+#   dout_slave               integral                8     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 140ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00111000 eq data_out_slave = 00111000
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 140ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11001111 eq data_out_master = 11001111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b11011   
+#   din_slave                integral                8     'b11011001
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11001111
+#   dout_slave               integral                8     'b111000  
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 260ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00011011 eq data_out_slave = 00011011
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 260ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11011001 eq data_out_master = 11011001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b1000010 
+#   din_slave                integral                8     'b11011011
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11011001
+#   dout_slave               integral                8     'b11011   
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 380ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 01000010 eq data_out_slave = 01000010
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 380ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11011011 eq data_out_master = 11011011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b11000   
+#   din_slave                integral                8     'b11100111
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11011011
+#   dout_slave               integral                8     'b1000010 
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 500ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00011000 eq data_out_slave = 00011000
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 500ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11100111 eq data_out_master = 11100111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b110100  
+#   din_slave                integral                8     'b11011110
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11100111
+#   dout_slave               integral                8     'b11000   
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 620ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00110100 eq data_out_slave = 00110100
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 620ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11011110 eq data_out_master = 11011110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b101010  
+#   din_slave                integral                8     'b11011001
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11011110
+#   dout_slave               integral                8     'b110100  
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 740ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00101010 eq data_out_slave = 00101010
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 740ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11011001 eq data_out_master = 11011001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b1001010 
+#   din_slave                integral                8     'b11000001
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11011001
+#   dout_slave               integral                8     'b101010  
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 860ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 01001010 eq data_out_slave = 01001010
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 860ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11000001 eq data_out_master = 11000001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b1001000 
+#   din_slave                integral                8     'b11110100
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11000001
+#   dout_slave               integral                8     'b1001010 
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 980ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 01001000 eq data_out_slave = 01001000
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 980ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11110100 eq data_out_master = 11110100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b100000  
+#   din_slave                integral                8     'b11000000
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11110100
+#   dout_slave               integral                8     'b1001000 
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 1100ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00100000 eq data_out_slave = 00100000
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 1100ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11000000 eq data_out_master = 11000000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b1000001 
+#   din_slave                integral                8     'b11001110
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11000000
+#   dout_slave               integral                8     'b100000  
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 1220ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 01000001 eq data_out_slave = 01000001
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 1220ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11001110 eq data_out_master = 11001110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b10001   
+#   din_slave                integral                8     'b11011101
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11001110
+#   dout_slave               integral                8     'b1000001 
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 1340ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00010001 eq data_out_slave = 00010001
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 1340ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11011101 eq data_out_master = 11011101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b1000110 
+#   din_slave                integral                8     'b11111110
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11011101
+#   dout_slave               integral                8     'b10001   
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 1460ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 01000110 eq data_out_slave = 01000110
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 1460ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11111110 eq data_out_master = 11111110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b111011  
+#   din_slave                integral                8     'b11011010
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11111110
+#   dout_slave               integral                8     'b1000110 
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 1580ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00111011 eq data_out_slave = 00111011
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 1580ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11011010 eq data_out_master = 11011010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b111010  
+#   din_slave                integral                8     'b11010101
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11011010
+#   dout_slave               integral                8     'b111011  
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 1700ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00111010 eq data_out_slave = 00111010
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 1700ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11010101 eq data_out_master = 11010101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b111010  
+#   din_slave                integral                8     'b11101101
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11010101
+#   dout_slave               integral                8     'b111010  
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 1820ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00111010 eq data_out_slave = 00111010
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 1820ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11101101 eq data_out_master = 11101101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b101     
+#   din_slave                integral                8     'b10110101
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11101101
+#   dout_slave               integral                8     'b111010  
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 1940ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00000101 eq data_out_slave = 00000101
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 1940ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 10110101 eq data_out_master = 10110101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b10011   
+#   din_slave                integral                8     'b11110000
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b10110101
+#   dout_slave               integral                8     'b101     
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 2060ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00010011 eq data_out_slave = 00010011
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 2060ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11110000 eq data_out_master = 11110000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b0       
+#   din_slave                integral                8     'b11111000
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11110000
+#   dout_slave               integral                8     'b10011   
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 2180ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00000000 eq data_out_slave = 00000000
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 2180ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11111000 eq data_out_master = 11111000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b11010   
+#   din_slave                integral                8     'b11101110
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11111000
+#   dout_slave               integral                8     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 2300ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00011010 eq data_out_slave = 00011010
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 2300ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11101110 eq data_out_master = 11101110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# mon_item                   spi_sequence_item       -     @676      
+#   din_master               integral                8     'b101111  
+#   din_slave                integral                8     'b11111110
+#   ld_master                integral                1     'b0       
+#   ld_slave                 integral                1     'b0       
+#   rd_master                integral                1     'b0       
+#   rd_slave                 integral                1     'b0       
+#   start                    integral                1     'b0       
+#   dout_master              integral                8     'b11101110
+#   dout_slave               integral                8     'b11010   
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(27) @ 2420ns: uvm_test_top.spi_env.scb [PASSED_M2S] data_in_master = 00101111 eq data_out_slave = 00101111
+# UVM_INFO E:/UVM/spi/tb//spi_scoreboard.svh(32) @ 2420ns: uvm_test_top.spi_env.scb [PASSED_S2M] data_in_slave = 11111110 eq data_out_master = 11111110
+# UVM_INFO verilog_src/uvm-1.0p1/src/base/uvm_objection.svh(1116) @ 2422ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   43
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [PASSED_M2S]    20
+# [PASSED_S2M]    20
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : D:/questasim_10.0b/win32/../verilog_src/uvm-1.0p1/src/base/uvm_root.svh(392)
+#    Time: 2421500 ps  Iteration: 44  Instance: /spi_top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at D:/questasim_10.0b/win32/../verilog_src/uvm-1.0p1/src/base/uvm_root.svh line 392

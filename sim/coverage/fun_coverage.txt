@@ -1,0 +1,55 @@
+COVERGROUP COVERAGE:
+------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric      Goal/ Status                      
+                                                                At Least                             
+------------------------------------------------------------------------------------------------------
+ TYPE /spi_pkg/spi_coverage_collector/COVER_DIN_MASTER 
+                                                       100.0%        100 Covered                   
+      Coverpoint COVER_DIN_MASTER::#coverpoint__0#       100.0%        100 Covered                   
+   Covergroup instance \/spi_pkg::spi_coverage_collector::COVER_DIN_MASTER  
+                                                       100.0%        100 Covered                   
+      Coverpoint #coverpoint__0#                         100.0%        100 Covered                   
+          covered/total bins:                                 3          3                           
+          missing/total bins:                                 0          3                           
+          bin m_din_low                                      20          1 Covered                   
+          bin m_din_mid                                      20          1 Covered                   
+          bin m_din_high                                     20          1 Covered                   
+          default bin misc_m_din                              0            ZERO                      
+   TYPE /spi_pkg/spi_coverage_collector/COVER_DIN_SLAVE 
+                                                       100.0%        100 Covered                   
+      Coverpoint COVER_DIN_SLAVE::#coverpoint__0#        100.0%        100 Covered                   
+   Covergroup instance \/spi_pkg::spi_coverage_collector::COVER_DIN_SLAVE  
+                                                       100.0%        100 Covered                   
+      Coverpoint #coverpoint__0#                         100.0%        100 Covered                   
+          covered/total bins:                                 3          3                           
+          missing/total bins:                                 0          3                           
+          bin s_din_low                                      20          1 Covered                   
+          bin s_din_mid                                      20          1 Covered                   
+          bin s_din_high                                     20          1 Covered                   
+          default bin misc_s_din                              0            ZERO                      
+   TYPE /spi_pkg/spi_coverage_collector/COVER_DOUT_MASTER 
+                                                       100.0%        100 Covered                   
+      Coverpoint COVER_DOUT_MASTER::#coverpoint__0#      100.0%        100 Covered                   
+   Covergroup instance \/spi_pkg::spi_coverage_collector::COVER_DOUT_MASTER  
+                                                       100.0%        100 Covered                   
+      Coverpoint #coverpoint__0#                         100.0%        100 Covered                   
+          covered/total bins:                                 3          3                           
+          missing/total bins:                                 0          3                           
+          bin m_dout_low                                     20          1 Covered                   
+          bin m_dout_mid                                     20          1 Covered                   
+          bin m_dout_high                                    20          1 Covered                   
+          default bin misc_m_dout                             0            ZERO                      
+   TYPE /spi_pkg/spi_coverage_collector/COVER_DOUT_SLAVE 
+                                                       100.0%        100 Covered                   
+      Coverpoint COVER_DOUT_SLAVE::#coverpoint__0#       100.0%        100 Covered                   
+   Covergroup instance \/spi_pkg::spi_coverage_collector::COVER_DOUT_SLAVE  
+                                                       100.0%        100 Covered                   
+      Coverpoint #coverpoint__0#                         100.0%        100 Covered                   
+          covered/total bins:                                 3          3                           
+          missing/total bins:                                 0          3                           
+          bin s_dout_low                                     20          1 Covered                   
+          bin s_dout_mid                                     20          1 Covered                   
+          bin s_dout_high                                    20          1 Covered                   
+          default bin misc_s_dout                             0            ZERO                      
+  
+TOTAL COVERGROUP COVERAGE: 100.0%  COVERGROUP TYPES: 4
